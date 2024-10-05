@@ -28,8 +28,8 @@ body {
 .pc {
   width: 90%;
   max-width: 90%;
-  height: 80vh;
-  max-height: 80vh;
+  height: 85vh;
+  max-height: 85vh;
   margin: 20px auto;
   border: 1px solid var(--font-color-main);
   border-radius: 20px;
@@ -108,8 +108,8 @@ nav ul li a:hover {
 }
 
 .weather-icon-css img {
-  width: 30%;
-  height: 100%;
+  width: 24rem;
+  aspect-ratio: 1 / 1;
 }
 
 .weather-description {
@@ -146,9 +146,11 @@ nav ul li a:hover {
 }
 
 .forcasts-box {
+  max-height: 12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
   margin: 0 0;
   color: var(--font-color-main);
 }
@@ -188,17 +190,16 @@ nav ul li a:hover {
 
 
 .forecast h5 {
-  text-align: left;
+  text-align: center;
+  width: 100%;
   padding: 15px 0 0 15px;
 }
 
 #forecast-box {
-  display: grid;
-  /* Default to grid layout */
-  grid-template-columns: repeat(5, 1fr);
-  /* Default layout */
-  gap: 10px;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 10px;
   padding: 10px 12px;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
@@ -207,10 +208,10 @@ nav ul li a:hover {
 }
 
 .weather-forecast-box {
-  width: 90%;
+  width: 100%;
   /* Keep it at 90% for larger screens */
-  max-width: 150px;
-  height: auto;
+  min-width: 8rem;
+  height: 12rem;
   border-radius: 15px;
   display: flex;
   text-align: center;
@@ -218,7 +219,6 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   gap: 3px;
-  flex-shrink: 0;
   border: 1px solid var(--font-color-main);
   font-size: 14px;
 }
@@ -229,8 +229,7 @@ nav ul li a:hover {
 }
 
 .weather-icon-forecast img {
-  width: 60px;
-  /* Increased icon size */
+  max-width: 6rem; /* Limit the maximum size */
 }
 
 .temp-weather {
@@ -253,9 +252,8 @@ nav ul li a:hover {
     width: 100%;
     max-width: none;
   }
-
   .weather-icon-css img {
-    width: 50%;
-    height: 70%;
+    width: 20rem;
+    aspect-ratio: 1 / 1;
   }
 }
